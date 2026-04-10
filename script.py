@@ -3,7 +3,7 @@ import warnings
 import time
 import pandas as pd
 import numpy as np
-from jugaad_data.nse import stockdf
+from jugaad_data.nse import stock_df
 from datetime import date, timedelta, datetime
 import concurrent.futures
 
@@ -37,7 +37,7 @@ def fetch_stock_analytics(symbol, enddate, retries=3):
     for attempt in range(retries):
         try:
             startdate = enddate - timedelta(days=120)
-            df = stockdf(symbol=symbol, fromdate=startdate, todate=enddate, series='EQ')
+            df = stock_df(symbol=symbol, from_date=startdate, to_date=enddate, series='EQ')
             if df is None or df.empty or len(df) < 65:
                 return None
 
