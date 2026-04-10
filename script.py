@@ -3,7 +3,7 @@ import warnings
 import time
 import pandas as pd
 import numpy as np
-from jugaaddata.nse import stockdf
+from jugaad_data.nse import stockdf
 from datetime import date, timedelta, datetime
 import concurrent.futures
 
